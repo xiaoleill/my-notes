@@ -56,6 +56,18 @@ git push
 
 push 后约 1 分钟，GitHub Actions 自动构建部署，网站更新。
 
+### ④ 从 Obsidian 笔记发布（可选）
+
+如果你平时用 Obsidian 记笔记，可以直接把某篇笔记转成博客文章：
+
+```bash
+python D:/mywork/my-notes/publish.py "01-功能安全/某篇笔记.md"
+```
+
+脚本会自动转换双链 `[[...]]`、把 `#标签` 移到 frontmatter、补全 Hugo 头部，然后按提示 `git push`。
+
+> Obsidian 笔记库在 `D:/mywork/pkm`（本地 git 仓库，未上云）。
+
 ---
 
 ## 注意事项
