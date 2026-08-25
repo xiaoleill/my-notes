@@ -1,0 +1,226 @@
+# ===== 网站基本信息 =====
+baseURL = "https://xiaoleill.github.io/my-notes/"
+title = "my-notes"
+theme = "LoveIt"
+
+# 语言设置（中文）
+defaultContentLanguage = "zh-cn"
+languageCode = "zh-CN"
+languageName = "简体中文"
+hasCJKLanguage = true
+
+# 其他
+enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = false
+# 忽略一些构建错误
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
+# 分页配置
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+# ===== 导航菜单 =====
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    name = "所有文章"
+    url = "/posts/"
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+  [[menu.main]]
+    weight = 4
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+
+# ===== 主题参数 =====
+[params]
+  # 站点默认主题 ["auto", "light", "dark"]
+  defaultTheme = "auto"
+  gitRepo = "https://github.com/xiaoleill/my-notes"
+  dateFormat = "2006-01-02"
+  title = "my-notes"
+  description = "汽车MCU功能安全与芯片架构的学习成长记录"
+
+  [params.author]
+    name = "xiaoleill"
+    email = "yaozongfu@163.com"
+    link = "https://github.com/xiaoleill"
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = ""
+      name = "my-notes"
+      pre = ""
+      typeit = false
+
+  [params.footer]
+    enable = true
+    hugo = true
+    copyright = true
+    author = true
+    since = 2026
+
+  [params.section]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.app]
+    title = "my-notes"
+    noFavicon = false
+
+  # 搜索配置（fuse 免费本地搜索）
+  [params.search]
+    enable = true
+    type = "fuse"
+    contentLength = 4000
+    placeholder = ""
+    maxResultLength = 10
+    snippetLength = 30
+    highlightTag = "em"
+    absoluteURL = false
+    [params.search.fuse]
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+
+  # 主页信息
+  [params.home]
+    rss = 10
+    [params.home.profile]
+      enable = true
+      gravatarEmail = ""
+      avatarURL = ""
+      title = ""
+      subtitle = "功能安全 · 芯片架构 · 学习成长"
+      typeit = true
+      social = true
+      disclaimer = ""
+    [params.home.posts]
+      enable = true
+      paginate = 6
+
+  # 主页社交信息
+  [params.social]
+    GitHub = "https://github.com/xiaoleill"
+    Email = "yaozongfu@163.com"
+    RSS = true
+
+  # 文章页面全局配置
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = false
+    lightgallery = false
+    ruby = true
+    fraction = true
+    fontawesome = true
+    linkToMarkdown = false
+    rssFullText = false
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = true
+    [params.page.code]
+      copy = true
+      maxShownLines = 50
+    [params.page.math]
+      enable = false
+    [params.page.share]
+      enable = true
+      Weibo = true
+      X = true
+    [params.page.comment]
+      enable = false
+
+  [params.typeit]
+    speed = 100
+    cursorSpeed = 1000
+    cursorChar = "|"
+    duration = -1
+
+  [params.verification]
+    google = ""
+    bing = ""
+    baidu = ""
+
+  [params.seo]
+    image = ""
+    thumbnailUrl = ""
+
+  [params.analytics]
+    [params.analytics.google]
+      id = ""
+
+  [params.cookieconsent]
+    enable = false
+
+  # CDN 配置：留空表示禁用 CDN，使用本地打包资源（国内访问更稳定）
+  [params.cdn]
+    data = ""
+
+# ===== Markdown 渲染 =====
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    noClasses = true
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[permalinks]
+  posts = ":contentbasename"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
